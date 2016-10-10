@@ -1,5 +1,8 @@
 ;; per http://ensime.github.io/editors/emacs/install
 
+;; refresh packages
+(package-refresh-contents)
+
 ;; global variables
 (setq
  inhibit-startup-screen t
@@ -33,7 +36,7 @@
 (global-unset-key (kbd "C-z"))
 
 ;; setup the required packages
-(setq package-list '(darcula-theme helm-projectile ensime auto-complete magit))
+(setq package-list '(pkg-info with-editor darcula-theme helm-projectile ensime auto-complete magit))
 
 ;; setup the package manager
 (require 'package)
