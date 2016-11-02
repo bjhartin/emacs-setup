@@ -36,7 +36,7 @@
 (global-unset-key (kbd "C-z"))
 
 ;; setup the required packages
-(setq package-list '(pkg-info with-editor darcula-theme helm-projectile ensime auto-complete magit))
+(setq package-list '(pkg-info with-editor darcula-theme helm-projectile ensime auto-complete magit feature-mode))
 
 ;; setup the package manager
 (require 'package)
@@ -227,5 +227,13 @@ If `xah-switch-buffer-ignore-dired' is true, also skip directory buffer.
 ;; Navigation
 (global-set-key (kbd "s-<up>") 'beginning-of-buffer)
 (global-set-key (kbd "s-<down>") 'end-of-buffer)
+
+;; Customize the mode line so Projectile project is highlighted
+(eval-after-load "projectile"
+  '(setq projectile-mode-line
+         '(:eval (list " ["
+                       (propertize (projectile-project-name)
+                                   'face '(:background "#44eeaa")) ;; Odd that 'background' and 'foreground' seem switched
+                       "]"))))
 
 (helm-projectile)
