@@ -237,3 +237,6 @@ If `xah-switch-buffer-ignore-dired' is true, also skip directory buffer.
                        "]"))))
 
 (helm-projectile)
+
+;; Turn on 'winner mode' so I can re-open accidentally closed windows easily
+(winner-mode 1)
